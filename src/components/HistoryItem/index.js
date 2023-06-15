@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import './index.css'
 
@@ -23,7 +24,7 @@ class HistoryItem extends Component {
           className="delete-button"
           type="button"
           onClick={deleteHistory}
-          testid="delete"
+          data-testid="delete"
         >
           <img
             src="https://assets.ccbp.in/frontend/react-js/delete-img.png"

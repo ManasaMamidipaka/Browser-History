@@ -1,3 +1,5 @@
+import {Component} from 'react'
+import HistoryItem from './components/HistoryItem'
 import './App.css'
 
 // These are the list used in the application. You can move them to any component needed.
@@ -77,7 +79,8 @@ const initialHistoryList = [
 ]
 
 // Replace your code here
-class App extends component {
+// eslint-disable-next-line no-undef
+class App extends Component {
   state = {searchString: '', historyList: initialHistoryList}
 
   changeSearchString = event => {
@@ -93,7 +96,12 @@ class App extends component {
     this.setState({historyList: filteredList})
   }
 
-  return (
+  render() {
+    const {searchString, historyList} = this.state
+    const searchList = historyList.filter(eachList =>
+      eachList.title.toLowerCase().includes(searchString.toLowerCase()),
+    )
+    return (
       <div className="app-container">
         <div className="head-part">
           <img
@@ -138,6 +146,3 @@ class App extends component {
 }
 
 export default App
-
-  
-
